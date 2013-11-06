@@ -1,0 +1,10 @@
+goal "Crear un documento HTML en blanco"
+goal "Ver como el archivo es interpretado por el navegador"
+
+overview do
+
+  message <<-MARKDOWN
+
+  MARKDOWN
+
+end
