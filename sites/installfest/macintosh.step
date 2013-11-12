@@ -1,47 +1,47 @@
-step "Learn your Mac OS X Version" do
+step "Conozca su versión Mac OS X" do
   message <<-MARKDOWN
 
-* Click on the Apple icon in the top left of your screen.
-* Select "About This Mac"
-* In the window that comes up, under the title "Mac OS X" there will be a version number.
-  * If it starts with 10.8, you have **Mountain Lion**.
-  * If it starts with 10.7, you have **Lion**.
-  * If it starts with 10.6, you have **Snow Leopard**.
-  * If it starts with 10.5, you have **Leopard**.
-  * If it starts with 10.4, you have **Tiger**.
-  * If it starts with 10.3, you have **Panther**.
+* Haga clic en el icono de Apple en la parte superior izquierda de la pantalla.
+* Selecciona "Acerca de este Mac"
+* En la ventana que aparece, bajo el título de "Mac OS X" no habrá un número de versión.
+  * Sí comienza con 10.8, tu tienes  **Mountain Lion**.
+  * Sí comienza con 10.7, tu tienes **Lion**.
+  * Sí comienza con 10.6, tu tienes **Snow Leopard**.
+  * Sí comienza con 10.5, tu tienes **Leopard**.
+  * Sí comienza con 10.4, tu tienes **Tiger**.
+  * Sí comienza con 10.3, tu tienes **Panther**.
 
-* Write down the Mac OS X version you have.
-* In addition, to the right of the "Processor", there will be the a processor type.
-  * If it ends with **Intel Core i7**, **Intel Core i5**, or **Intel Core i3**, you are good to go.
-  * If it ends with **Intel Core 2 Duo**, you are good to go.
-  * If it ends with **Intel Core Duo** or something else, you are **NOT** good to go.  Please flag down a volunteer.
+* Anota la versión de Mac OS X que tienes.
+* Además, a la derecha de el "procesador", habrá una el tipo de procesador.
+  * Si termina con **Intel Core i7**, **Intel Core i5**, or **Intel Core i3**, ya estas listo para continuar.
+  * Si termina con **Intel Core 2 Duo**, ya estas listo para continuar.
+  * Si termina con **Intel Core Duo** o algo más, tu **NO** estas listo para continuar.  Por favor, pide ayuda a un voluntario.
 
-* Once complete, you may close the "About This Mac" window.
+* Una vez completada, puedes cerrar la ventana "Acerca de esta Mac".
 
-Below is an example.
+A continuación se muestra un ejemplo.
 
 ![OS X Snow Leopard](img/AboutThisMac.png)
 
   MARKDOWN
 end
 
-step "Choose your instructions" do
+step "Elije tus instrucciones" do
   
   option "Mountain Lion/Lion/Snow Leopard" do
     option "RailsInstaller" do
-      message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
+      message "RailsInstaller Es una manera fácil de empezar a trabajar con Ruby y Rails en OSX. Prueba primero."
       link "osx_railsinstaller"
     end
-    option "Manually" do
-      message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
+    option "Manualmente" do
+      message "Sí algo salió mal con RailsInstaller, o sí deseas ir por 'el camino largo', utiliza estas instrucciones."
       link "osx_lion"
     end
   end
 
   option "Leopard/Tiger/Panther" do
-    important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
-    message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
+    important "Si es posible, usted debe tratar de actualizar por lo menos **Snow Leopard**. Apple no lo vende la tienda de Apple, por lo que tendrás que [comprarlo en línea](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) o encontrar una copia con un amigo."
+    message "De lo contrario, puedes intentar seguir las instrucciones de Panther, pero debes estar preparado para algunas cosas va ser difícil.."
     link "osx_panther"
   end
 end
