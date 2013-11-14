@@ -1,36 +1,36 @@
-important "If you wrote down **Core Duo** as your processor type in the previous step, **DO NOT** continue with these steps.  Please flag down a volunteer for additional help."
+important "Sí escribiste ** Core Duo **como el tipo de procesador en el paso anterior, **NO CONTINUES CON ESTOS PASOS **. Por favor, pare a un voluntario para ayuda adicional."
 
-message "These instructions should work on Snow Leopard, Lion, and Mountain Lion."
+message "Estas instrucciones deben trabajar en Snow Leopard, Lion, y Mountain Lion."
 
-step "Run RailsInstaller" do
+step "Corre RailsInstaller" do
 
   message <<-MARKDOWN
-RailsInstaller includes Rails, Ruby, Git, and SQLite.
+RailsInstaller incluye Rails, Ruby, Git, y SQLite.
 
-Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for your OS.
+Ir a <http://railsinstaller.org/>, desplácese a la sección "Descargas" y descargue el RailsInstaller para su sistema operativo.
 
-Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults. Enter your full name and email when prompted.
+Haga clic en el archivo descargado para ejecutar el asistente de instalación. Haga clic en Siguiente en cada paso para aceptar los valores predeterminados. Escriba su nombre completo y correo electrónico cuando se le solicite.        
   MARKDOWN
 end
 
-step "Open Terminal" do
-  message "Look for **Terminal.app** inside Applications -> Utilities."
+step "Abra Terminal." do
+  message "Buscar **Terminal.app** dentro de las aplicaciones -> Utilidades."
 
-  message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
+  message "Agrégalo al Dock; que lo vas a utilizar mucho. (Para agregarlo a la base, haga clic y mantenga pulsado el icono del Dock una vez que la terminal esté abierta, seleccione Opciones -.> Mantener en el Dock.)"
 
-  tip "Arrange your windows so that Terminal and your web browser are next to each other. You will want to *read* from your browser and *type into* your terminal *at the same time*."
+  tip "Organiza tus ventanas para que la Terminal y su navegador web estén uno junto al otro. Tendrás que *leer* desde el navegador y *escribir* en su terminal al mismo tiempo*."
 end
 
-step "Install Sublime Text 2" do
-  message "We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
+step "Instalar Sublime Text 2" do
+  message "Vamos a utilizar el editor de texto Sublime Text 2 durante el taller, aunque puedes utilizar un editor diferente si lo prefieres. Tiene que ser un editor de texto plano, como TextMate. Otros programas de procesamiento de textos Microsoft Word no funcionarán."
 
-  important "When in doubt, use Sublime Text 2."
+  important "En caso de alguna duda, utilice Sublime Text 2."
 
   link "install_sublime_text_2_for_mac"
 end
 
 step "Update Rails" do
-  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+  message "Actualmente, RailsInstaller instala Rails 3.2.x, pero queremos 4.x. Actualización de Rails es muy fácil:"
 
   console "gem install rails"
 
