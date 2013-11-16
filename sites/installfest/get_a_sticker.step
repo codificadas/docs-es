@@ -1,12 +1,12 @@
-step "Have a volunteer check your tool versions" do
+step "que un voluntario revise tus versiones de herramientas" do
 
-message "Find a volunteer and have them watch the next steps."
+message "Encuentra a un voluntario y pídele que revise los siguientes pasos."
 
-verify "tool installation" do
+verify "instalación de la herramienta" do
 
-  tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
+  tip "La mayoría de las veces, los números de versión no tienen que coincidir exactamente. En general, sí la * primera * de dos números coinciden, o sí el número total que se tiene es * mayor * que el de abajo, entonces usted está bien."
 
-  h3 "If you're on OSX or Linux:"
+  h3 "Si estás en OSX o Linux:"
 
   console "rvm -v"
   fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]{/FUZZY}"
@@ -14,7 +14,7 @@ verify "tool installation" do
   console "sqlite3 --version"
   fuzzy_result "3{FUZZY}.x.x{/FUZZY}"
 
-  h3 "On all operating systems:"
+  h3 "En todos los sistemas operativos"
 
   console "ruby -v"
   fuzzy_result "ruby 1.9{FUZZY}.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]{/FUZZY}"
@@ -35,11 +35,11 @@ verify "tool installation" do
   fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 end
 
-message "If this works - proceed to build the sticker app."
+message "Si esto funciona - proceder a construir la aplicación de etiqueta."
 
 end
 
-step "Build the sticker app" do
+step "Construir la aplicación sticker" do
 
 verify "rails" do
 
@@ -52,7 +52,7 @@ verify "rails" do
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed."
 
   tip do
-    message "On Linux, you may have to add this line to your Gemfile:"
+    message "En Linux, puede que tenga que añadir esta línea a su Gemfile:"
     pre "gem 'therubyracer', :platforms => :ruby"
   end
 
@@ -109,16 +109,15 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
   RESULT
 
   message <<-BROWSER_VERIFY
-In your web browser, go to <http://localhost:3000/drinks>
+En el explorador web, vaya a http://localhost:3000/drinks
 
-1. Click on "New drink"
-2. Enter Cappuccino for the name
-3. Enter 135 for the temperature.
-4. Click on "Create Drink".
+1. Haga clic en "Nueva bebida"
+2. Introduzca Cappuccino para el nombre
+3. Introduzca 135 para la temperatura.
+4. Haga clic en "Crear bebida".
+5. Usted debe ver:![la bebida ha sido creada](img/get_a_sticker_you_should_see.png)
 
-You should see: ![Drink was successfully created](img/get_a_sticker_you_should_see.png)
-
-In your terminal, Hold Control and hit C to stop the rails server.
+En la terminal, pulse la tecla Control y pulsa C para detener el servidor de Rails.
   BROWSER_VERIFY
 
   fuzzy_result <<-TERMINAL
@@ -138,7 +137,7 @@ In your terminal, Hold Control and hit C to stop the rails server.
 end
 
 verify "git" do
-  message "Make sure you're still in the sticker directory."
+  message "Asegúrese de que usted todavía está en el directorio de etiqueta."
 
   console "git init"
   result "Initialized empty Git repository in /home/steven/railsbridge/sticker/.git/"
@@ -179,7 +178,7 @@ nothing to commit (working directory clean)"
 end
 
 verify "heroku deploy" do
-  important "Each application has its own `Gemfile`. Be sure you're opening the one inside your sticker app's folder."
+  important "Cada aplicación tiene su propio `Gemfile`. Asegúrese de que está abriendo la una dentro de la carpeta de aplicaciones de etiqueta."
 
   message "Use your editor to open the Gemfile  (`C:\\sites\\railsbridge\\sticker\\Gemfile` or `~/railsbridge/sticker/Gemfile`) and find the line containing:"
 
@@ -187,7 +186,7 @@ verify "heroku deploy" do
 gem 'sqlite3'
   RUBY
 
-  message "Remove this line and replace it with:"
+  message "Quite esta línea y sustituirla por:"
 
   source_code :ruby, <<-RUBY
 group :development, :test do
@@ -200,7 +199,7 @@ group :production do
 end
   RUBY
 
-  console "bundle install --without production"
+  console "bundle install - sin producción"
   result "Fetching gem metadata from https://rubygems.org/.........
 # ...most output omitted for brevity...
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
@@ -208,18 +207,18 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
 
   console <<-GIT_COMMIT
 git add .
-git commit -m "Add pg gem for Heroku."
+git commit -m "Añadir pg gem para Heroku."
 GIT_COMMIT
   result "[master 4a275be] Add pg gem for Heroku.
  2 files changed, 6 insertions(+)"
  
-  message "Use your editor to open the file routes.rb  (`C:\\sites\\railsbridge\\sticker\\config\\routes.rb` or `~/railsbridge/sticker/config/routes.rb`) and find the line containing:"
+  message "Utilice su editor para abrir las rutas de archivos.rb  (`C:\\sites\\railsbridge\\sticker\\config\\routes.rb` or `~/railsbridge/sticker/config/routes.rb`) y encontrar la línea que contiene:"
 
   source_code :ruby, <<-RUBY
 # root 'welcome#index'
   RUBY
   
-  message "Remove this line and replace it with:"
+  message "Quite esta línea y sustituirla por:"
  
   source_code :ruby, <<-RUBY
 root 'drinks#index'
@@ -237,7 +236,7 @@ http://evening-wind-5284.heroku.com/ | git@heroku.com:evening-wind-5284.git
 Git remote heroku added
   HEROKU_CREATE
 
-  message "The name of your Heroku app will be different. That is fine."
+  message "El nombre de su aplicación Heroku será diferente. Eso está bien."
 
   console "git push heroku master"
   result <<-HEROKU_PUSH
@@ -284,12 +283,12 @@ You should see the same screen as you did at `http://localhost:3000/drinks` and 
 
 end
 
-message "If this works -- find a volunteer and show them"
+message "Si esto funciona - encontrar un voluntario y mostrarles los cambios"
 
 end
 
-step "Congratulations!" do
-  message "Show a volunteer -- you get a sticker!"
+step "¡Enhorabuena!" do
+  message "Mostrar un voluntario - se obtiene una etiqueta!"
 end
 
 next_step "clean_up"
