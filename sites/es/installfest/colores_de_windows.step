@@ -10,8 +10,8 @@ spanish_step "Determina si tu Sistema Operativo es de 32 o 64 bits" do
   message <<-MARKDOWN
  * En Windows 7 o Vista, desde el menú de Inicio, escribe *system* en el campo de Iniciar Búsqueda, y después haz click en *Sistema* o *Información del Sistema* en la lista de Programas. En la sección de *Sistema* el *Tipo de Sistema* te dirá si tu Sistema Operativo es de 32 o 64 bits.
  * En Windows XP, haz click derecho en el ícono de "Mi PC", escoge Propiedades, y después General
- * si el Sistema dice Windows XP Professional x64 Edition Version < año > entonces el tuyo es de 64 bits.
- * si dice Windows XP Professional Version < año > entonces es de 32 bits.
+  * si el Sistema dice Windows XP Professional x64 Edition Version < año > entonces el tuyo es de 64 bits.
+  * si dice Windows XP Professional Version < año > entonces es de 32 bits.
   MARKDOWN
 end
 
