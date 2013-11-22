@@ -1,55 +1,63 @@
-  message "These instructions should work for all versions of Windows from XP on to Windows 8."
+  message "Estas instrucciones deberían funcionar para todas las versiones de Windows desde XP a Windows 8."
 
-  message "You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings."
+  message "Es posible que tengas que iniciar sesión como administrador, o dar la contraseña de administrador al instalar algunos programas, según la versión de Windows y la configuración del usuario."
 
-step "Run RailsInstaller" do
+step "Ejecutar RailsInstaller" do
 
   message <<-MARKDOWN
-  RailsInstaller includes Rails, Ruby, Git, and SQLite.
+  RailsInstaller includes Rails, Ruby, Git, y SQLite.
 
-  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
+  Ir a <http://railsinstaller.org/>,desplazarse a a la sección "Descargas" y descargue el RailsInstaller para Windows/Ruby 1.9.
 
-  Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
+  Haga clic en el archivo descargado para ejecutar el Wizard. Haga clic en Next en cada paso para aceptar los valores predeterminados.
 
-  Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
+  Asegúrese de verificar los requisitos para *Install git (recomendado)* y *Añadir ejecutables para Ruby, DevKit Git (si se ha indicado previamente) al PATH*
 
   ![WinRailsInstaller.jpg](img/WinRailsInstaller.jpg)
 
-  Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites
+  Rails se instalará en C:\\RailsInstaller y el directorio para sus proyectos Rails será C:\\Sites
 
   MARKDOWN
 end
 
-step "Configure your git and ssh environment" do
+step "Configure su git y el entorno ssh" do
 
-  important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
+  important "Al final de la instalación habrá un checkbox pidiendo 'git y configurar el entorno de ssh'. **Deja esta casilla marcada.** Se abrirá una terminal que tiene que escribir en **type into**."
 
-  message "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
-  message "Type *your actual full name* into the console and press **[enter]**"
+  message "Cuando se te pregunta *Por favor introduzca su nombre, por ejemplo el mio es: Wayne E. Seguin*"
+  message "Escriba *su nombre completo real* en la consola y pulse **[enter]**"
 
-  message "When it asks *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
-  message "Type *your actual email address* into the console and press **[enter]**"
+  message "Cuando se te pregunta *Por favor introduce tu dirección de correo electrónico, por ejemplo la mia es: wayneeseguin@gmail.com*"
+  message "Escribe *tu direccion actual de correo electronico* en la consola y pulsa.**[enter]**"
 
-  important "Use the **same email address** for heroku, git, github, and ssh."
+  important "Utiliza *la misma dirección de correo electrónico* para heroku, git, github, y ssh."
 
   tip do
-    message "After this step you will have some **git config settings** and you will also have an **ssh key**."
+    message "Después de este paso, tendrá algunos ajustes **git config settings** y usted también puede tener una clave en **ssh key**."
   end
 
 end
 
-step "Windows 8 Only — Install Node.js" do
+step "Sólo para Windows 8 - Instalar Node.js" do
 
-  message "Go to <http://nodejs.org> and download the installer"
+  message "Ir a <http://nodejs.org> y descargar el instalador"
 
-  message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
+  message "Haga clic en el archivo descargado para ejecutar el Wizard. Haga clic en Next en cada paso para aceptar los valores predeterminados."
 
-  message "**Reboot your computer.**"
+  message "**Reinicie su computadora.**"
 
-  message "Once your computer is back up, load **Command Prompt with Ruby and Rails** (see below) and..."
+  message "Una vez que su equipo es el respaldo, la carga **Command Prompt con Ruby and Rails** (véase más adelante) y..."
 
   console "node -v"
   fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
+end
+
+step "Update Rails" do
+  message "Actualmente, RailsInstaller instalador Rails 3.2.x, pero queremos 4.x. Actualizar Rails es muy fácil:"
+
+  console "gem install rails"
+
+  message "...y ya está. La nueva version de Rails! Woo."
 end
 
 step "Sanity Check" do
@@ -62,14 +70,14 @@ step "Sanity Check" do
 
 end
 
-step "Open a Terminal" do
-  message "Much of using Rails is typing commands and hitting **[enter]**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser."
+step "Abrir la Terminal" do
+  message "Gran parte de utilizar Rails es teclear los comandos y presionar **[enter]**. Tu experiencia usando Rails en Windows depende en gran medida de que conviertas en amigo de la ventana de la Terminal. Normalmente trabajarás en la terminal y deberás mantenerla abierta junto con su navegador."
 
-  tip "The Terminal is also called the Command Prompt, Command Line, DOS Prompt, or DOS Window."
+  tip "La terminal también se llama la línea de Command Prompt, Command Line, DOS Prompt, o DOS Window."
 
-  message "RailsInstaller made a special Terminal for you to use when you're working on Ruby, Rails, or Git."
+  message "RailsInstaller hizo una terminal especial para su uso cuando se está trabajando en Ruby, Rails, or Git."
 
-  message "To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**. You should do all your Rails work in this RailsInstaller DOS window."
+  message "Para abrir la terminal especial, elije **All Programs** en el menú de inicio, a continuacion elije **RailsInstaller** y luego **Command Prompt con Ruby y Rails**. Tu debes de hacer todo tu trabajo Rails en la ventana RailsInstaller DOS."
 
   img src: 'img/railsbridge_findingCommandPrompt.png'
 
@@ -77,16 +85,16 @@ step "Open a Terminal" do
     img src: 'img/railsbridge_windowsScreenshot-commandprompt-pinnedtotaskbar.png', alt: 'Pin the Command Prompt to the Task Bar'
   end
 
-  message "Here is a summary of your settings after this process:"
+  message "Este es un resumen de los ajustes después de este proceso:"
 
   img src: 'img/railsbridge_windowsScreenshot-commandprompt_ror.jpg'
 
 end
 
-step "Configure the Windows Terminal" do
-  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
+step "Configura la terminal de Windows" do
+  message "Toma un momento para configurar el *Command Prompt con Ruby y Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
 
-  spanish_link "configura_la_terminal_de_windows"
+  link "configure_the_windows_terminal"
 
   tip "clearing the terminal" do
     message "If you ever want to clear the terminal of all its cluttered output"
@@ -109,12 +117,12 @@ step "Install Windows Colors" do
 
   message "This step is optional, but **highly** recommended.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
 
-  spanish_link "colores_de_windows"
+  link "windows_colors"
 
 end
 
 step "Configure Git" do
-  spanish_link "configura_git"
+  link "configure_git"
 end
 
 step "Install a Text Editor" do
@@ -129,4 +137,4 @@ step "Install a Text Editor" do
   message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
 end
 
-next_spanish_step "crea_una_cuenta_de_heroku"
+next_step "create_a_heroku_account"
