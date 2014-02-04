@@ -237,7 +237,11 @@ class Contents < Erector::Widget
       if has_collapsables(hierarchy)
         span class: "expand-all" do
           i class: "fa fa-arrows-alt"
+<<<<<<< HEAD
+          text "Expand All"
+=======
           text "#{ I18n.t 'expand_all' }"
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
         end
       end
     end

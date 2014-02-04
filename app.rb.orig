@@ -84,7 +84,11 @@ class InstallFest < Sinatra::Application
   end
 
   def ext
+<<<<<<< HEAD
+    ext = $1 if doc_path.match(/\.(.*)/)
+=======
     $1 if doc_path.match(/\.(.*)/)
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
   end
 
   def doc_path

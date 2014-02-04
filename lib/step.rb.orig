@@ -1,10 +1,18 @@
+<<<<<<< HEAD
+require 'erector'
+=======
 require 'active_support/core_ext/string/strip'
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
 require 'big_checkbox'
 require 'erector'
 require 'erector_scss'
 require 'i18n'
 require 'markdown_renderer'
 require 'titleizer'
+<<<<<<< HEAD
+require 'active_support/core_ext/string/strip'
+=======
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
 
 class Step < Erector::Widget
   external :style, <<-CSS
@@ -54,6 +62,15 @@ class Step < Erector::Widget
   ## steps
 
   @@header_sections = {
+<<<<<<< HEAD
+    steps:"Steps",
+    explanation:"Explanation",
+    overview:"Overview",
+    discussion:"Discussion Items",
+    hints:"Hints",
+    tools_and_references:"Tools and References",
+    requirements:"Requirements to advance",
+=======
     steps: 'header_sections.steps',
     explanation: 'header_sections.explanation',
     overview: 'header_sections.overview',
@@ -61,6 +78,7 @@ class Step < Erector::Widget
     hints: 'header_sections.hints',
     tools_and_references: 'header_sections.tools_and_references',
     requirements: 'header_sections.requirements',
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
   }
 
   @@header_sections.each do |type, header|
@@ -81,7 +99,11 @@ class Step < Erector::Widget
     div :class => "step", :title => name do
       h1 do
         widget BigCheckbox
+<<<<<<< HEAD
+        prefix "Step #{num}" + (!name.nil? ? ': ' : '')
+=======
         prefix "#{ I18n.t 'step' } #{ num }" + (!name.nil? ? ': ' : '')
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
         text name
       end
       _render_inner_content &Proc.new if block_given?
@@ -90,7 +112,11 @@ class Step < Erector::Widget
 
   def link name
     p :class => "link" do
+<<<<<<< HEAD
+      text "Go on to "
+=======
       text "#{ I18n.t 'link_text' } "
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
       simple_link(name, class: :link)
     end
   end
@@ -115,7 +141,11 @@ class Step < Erector::Widget
   def next_step name
     div :class => "step next_step" do
       h1 do
+<<<<<<< HEAD
+        prefix "Next Step:"
+=======
         prefix "#{ I18n.t 'next_step' }"
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
       end
       link name
     end
@@ -130,7 +160,11 @@ class Step < Erector::Widget
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
     h1 :class => "option" do
+<<<<<<< HEAD
+      span "Option #{num}: "
+=======
       span "#{ I18n.t 'option' } #{num}: "
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
       text name
     end
     _render_inner_content &Proc.new if block_given?
@@ -245,14 +279,22 @@ class Step < Erector::Widget
 
   def type_in_file filename, msg
     div do
+<<<<<<< HEAD
+      span "Type this in the file #{filename}:"
+=======
       span "#{ I18n.t 'type_in_file' } #{ filename }:"
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
       source_code :ruby, msg
     end
   end
 
   def further_reading
     div :class => "further-reading" do
+<<<<<<< HEAD
+      h1 "Further Reading"
+=======
       h1 "#{ I18n.t 'further_reading' }"
+>>>>>>> db262c5da97180eb1df4433db96c7ddfbfeb709e
       blockquote do
         yield
       end
