@@ -35,12 +35,12 @@ Abre una terminal (Aplicaciones > Accessorios > Terminal). Tal vez quieras hacer
     zlib1g-dev
   }
 
-  spanish_console "sudo apt-get install #{apts.join(' ')}"
+  console "sudo apt-get install #{apts.join(' ')}"
 
 end
 
-spanish_step "Instalar git" do
-  spanish_console "sudo apt-get install git"
+step "Instalar git" do
+  console "sudo apt-get install git"
 
   message "Si esto resulta en un error, no hay problema, ya que el paso anterior pudo haber instalado previamente `git-core`"
 end
@@ -54,14 +54,14 @@ spanish_step "Instala RVM" do
     message "Si estás utilizando Ubuntu 12.04 o la última versión de Mint, asegúrate de que la opción `Ejecutar el comando como un intérprete de conexión` está marcado en la pestaña Título y comando en Editando el Perfil (localizado en el menú de la Terminal). Después de cambiar estas configuraciones, vas a tener que salir de la sesión de tu consola e iniciar una nueva para que los cambios tomen efecto. "
     img src: 'img/railsbridge_ubuntu12-checkbox.png', alt: "Ubuntu 12.04 terminal settings"
   end
-  spanish_link "instala_rvm_y_ruby"
+  link "instala_rvm_y_ruby"
   message "Reinicia tu terminal antes de continuar."
 end
 
 spanish_step "Instalar Rails" do
   message "De nuevo utilizando una terminal, ejecuta el siguiente comando para instalar rails."
 
-  spanish_console "gem install rails"
+  console "gem install rails"
 end
 
 spanish_step "Sublime Text 2" do
@@ -77,4 +77,4 @@ MARKDOWN
   end
 end
 
-next_spanish_step "crea_una_cuenta_de_heroku"
+next_step "crea_una_cuenta_de_heroku"
