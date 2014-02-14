@@ -3,19 +3,19 @@ require 'titleizer'
 class Contents < Erector::Widget
   attr_accessor :site_dir
   attr_accessor :page_name
-  needs :page_name, :site_name, :site_dir => nil
+  # todo: replace site_name, locale, site_dir with Site object
+  needs :page_name, :site_name, :locale => nil, :site_dir => nil
 
   def initialize options
     super options
 
     self.page_name = options[:page_name]
 
-    if options.include? :site_dir
-      self.site_dir = options[:site_dir]
+    if options.include? :site_dir  # used in tests
+      @site_dir = options[:site_dir]
     else
-      here = File.expand_path File.dirname(__FILE__)
-      top = File.expand_path "#{here}/.."
-      self.site_dir = "#{top}/sites/#{@site_name}"
+      site = Site.named(@site_name, @locale)
+      @site_dir = site.dir if site
     end
   end
 
@@ -65,8 +65,8 @@ class Contents < Erector::Widget
     content = content_for(filename)
 
     # (stepfiles) links of the form: stepfile "next page"
-    content.scan /(next_step|next_spanish_step)\s*["'](.*?)["']/ do |method, link|
-      return link 
+    content.scan /next_step\s*["'](.*?)["']/ do |link, _|
+      return link
     end
 
     return nil
@@ -228,7 +228,7 @@ class Contents < Erector::Widget
       toc_list(mark_open_and_closed(hierarchy)[:items])
 
       unless orphans.empty?
-        h1 "Other Pages"
+        h1 "#{ I18n.t 'other_pages' }"
         ul do
           orphans.each { |orphan| toc_link orphan }
         end
@@ -237,7 +237,7 @@ class Contents < Erector::Widget
       if has_collapsables(hierarchy)
         span class: "expand-all" do
           i class: "fa fa-arrows-alt"
-          text "Expand All"
+          text "#{ I18n.t 'expand_all' }"
         end
       end
     end
