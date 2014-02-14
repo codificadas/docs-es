@@ -8,7 +8,7 @@ end
 spanish_step do
   message 'Crea un nuevo archivo con el nombre de: conditionals_test.rb'
  spanish_type_in_file 'conditionals_test.rb', <<-'CONTENTS'
-print "Cuántas manzanas tienes? > "
+print "¿Cuántas manzanas tienes? > "
 total_manzanas = gets.to_i
 puts "Tu tienes #{total_manzanas} manzanas."
   CONTENTS
