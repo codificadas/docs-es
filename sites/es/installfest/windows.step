@@ -105,14 +105,6 @@ step "Configura la Terminal de Windows" do
   end
 end
 
-step "Instala Colores de Windows" do
-
-  message "Este paso es opcional, pero **altamente** recomendado. Consejo -- haz click para abrir el link de abajo, y cuando hayas terminado esos pasos, presiona el botón de **atrás** de tu navegador para continuar con este procedimiento."
-
-  link "colores_de_windows"
-
-end
-
 step "Instala un Editor de Textos" do
   message "Necesitas un editor de texto para escribir código Ruby. Si ya tienes un editor de texto preferido, como vi, emacs, jedit, etc. puedes brincarte este paso. Debe ser un editor de texto plano y no algo con estilos como Word de Microsoft o WordPad."
 

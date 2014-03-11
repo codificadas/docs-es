@@ -22,8 +22,6 @@ git config --global color.branch auto
   BASH
 
   important do
-    message "Si estás utilizando Windows, posiblemente vas a tener que instalar AnsiCon para ver los colores (de otra manera vas a ver texto sin sentido). Si no hiciste esto anteriormente, deberás hacerlo en este momento."
-
-    link_without_toc "colores_de_windows"
+    message "Si estas utilizando Windows, la salida de Git no tendrá colores."
   end
 end
