@@ -1,28 +1,28 @@
 message <<-MARKDOWN
 
-We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate.
+Estaremos usando el editor Sublime Text 2 durante el taller, aunque eres libre de utilizar un editor diferente si lo prefieres. Debe ser un editor de texto plano, como vi o Textmate.
 
 MARKDOWN
 
-important "Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work."
+important "Microsoft Word y otros procesadores de texto, incluyendo TextEdit y Notepad, no funcionarán."
 
-step "Download Sublime Text 2" do
-  message "Download the [Sublime Text 2 installer](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg)."
+step "Descargar Sublime Text 2" do
+  message "Descarga el [instalador de Sublime Text 2](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg)."
 end
 
-step 'Select "Open with DiskImageMounter" in the file save dialog' do
-  message "This should be the default."
+step 'Seleccionar "Open with DiskImageMounter" en el cuadro de diálogo' do
+  message "Este debe ser la opción seleccionada por defecto."
 
-  message "It will open an installer with a Sublime Text 2 icon and a picture of your Applications folder. Something like this:"
+  message "Esto abrirá un instalador con un ícono de Sublime Text 2 y una imagen de tu carpeta Aplicaciones. Algo así:"
 
   img src: 'img/install_sublime_text.png'
 
 end
 
-step "Drag Sublime Text 2 into your Applications folder." do
-  message "It will open an installer with a Sublime Text 2 icon and a picture of your Applications folder. Drag Sublime Text 2 into your Applications folder."
+step "Arrastrar Sublime Text 2 en tu carpeta Aplicaciones." do
+  message "Esto abrirá un instalador con un ícono de Sublime Text 2 y una imagen de tu carpeta Aplicaciones. Arrastra Sublime Text 2 hacia la carpeta Aplicaciones."
 end
 
-step "Unmount the installer disk image" do
-  message "by dragging it from your desktop to the trash"
+step "Desmontar el instalador" do
+  message "arrastrándolo de tu escritorio a la basura"
 end
