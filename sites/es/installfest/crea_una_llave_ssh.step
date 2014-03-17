@@ -1,33 +1,34 @@
-message "An SSH key uniquely identifies you (and your computer) when your computer is communicating with other computers. Think of an SSH key as a fancy password."
+message "Una llave SSH te identifica (y a tu computadora) cuando te estás comunicando con otras computadoras. Piensa en una llave SSH como una contraseña de lujo."
 
-message "You'll need one of these to create your Heroku and Github accounts."
+message "Necesitarás una de éstas para crear tu cuentas de Heroku y de Github"
 
-option "Did you use RailsInstaller on Windows?" do
-  message "Congratulations, you already have an ssh key!"
+option "¿Utilizaste RailsInstaller en Windows?" do
+  message "¡Felicidades, ya tienes una llave SSH!"
 end
 
-option "otherwise" do
-important "Use the same email address for heroku, git, github, and ssh."
+option "de otra forma" do
 
-important "**REPLACE** `student@example.com` with your **actual email address** below."
+important "Usa la misma dirección de correo para Heroku, Git, Github, y SSH."
+
+important "Enseguida **REEMPLAZA** `student@example.com` con tu **dirección de correo actual**."
 
 console "ssh-keygen -C student@example.com -t rsa"
 
-message "Press enter to accept the default key save location."
+message "Presiona enter para aceptar la ubicación por defecto en que se guardará la llave"
 
-message "Next, you'll be asked for a keyphrase."
+message "En el siguiente paso, te pedirá que ingreses un keyphrase."
 
-h1 "Choose keyphrase"
+h1 "Elige keyphrase"
 blockquote do
-  option "No keyphrase" do
-    message "Hit enter to accept blank passphrase, then hit enter again."
+  option "Sin keyphrase" do
+    message "Presiona enter para aceptar una frase de contraseña (passphrase) en blanco, enseguida presiona enter otra vez."
   end
   option "Keyphrase" do 
-    message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
+    message "Si tu computadora es compartida con otras personas, como en laptops de trabajo, debes elegir e ingresar una frase de contraseña real. Dos veces."
   end
 end
 
-message "After key generation is complete, you'll have output that looks like this."
+message "Después de que la generación de la llave se ha completado, verás una salida así."
 
 result <<-OUTPUT
 Generating public/private rsa key pair.
@@ -42,12 +43,12 @@ The key fingerprint is:
   OUTPUT
 
 verify do
-  message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
-  tip "Public vs. Private Keys" do
-    message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
-    message "`id_rsa.pub` is your **public key** and can be shared freely."
-    message "`id_rsa` is your **private key** and must be kept secret."
-    message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
+  message "Tu nueva llave pública se almacena ahora en `~/.ssh/id_rsa.pub`"
+  tip "Llave Pública vs. Llave Privada" do
+    message "Si revisas dentro de `~/.ssh/`, verás que hay dos archivos con el mismo nombre: `id_rsa` e `id_rsa.pub`."
+    message "`id_rsa.pub` es tu **llave pública** y puede ser compartida libremente."
+    message "`id_rsa` es tu **llave privada** y debe mantenerse en secreto."
+    message "Si alguien mas obtiene tu llave privada y tu frase de contraseña, entonces puede suplantar tu identidad para tener acceso a tus cuentas de Heroku y Github, y provocar algún daño."
   end
 end
 
