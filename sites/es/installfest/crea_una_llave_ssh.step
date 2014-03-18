@@ -1,6 +1,6 @@
 message "Una llave SSH te identifica (y a tu computadora) cuando te estás comunicando con otras computadoras. Piensa en una llave SSH como una contraseña de lujo."
 
-message "Necesitarás una de éstas para crear tu cuentas de Heroku y de Github"
+message "Necesitarás una de éstas para crear tus cuentas de Heroku y de Github"
 
 option "¿Utilizaste RailsInstaller en Windows?" do
   message "¡Felicidades, ya tienes una llave SSH!"
