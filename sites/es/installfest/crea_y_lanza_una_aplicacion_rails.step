@@ -262,5 +262,5 @@ Migrating to CreateUsers (20111204065949)
   end
 end
 
-next_step "get_a_sticker"
+next_step "consigue_un_sticker"
 
