@@ -1,4 +1,4 @@
-message "Una llave SSH te identifica (y a tu computadora) cuando te estás comunicando con otras computadoras. Piensa en una llave SSH como una contraseña de lujo."
+message "Una llave SSH te identifica (y a tu computadora) cuando te estás comunicando con otras computadoras. Considera una llave SSH como una contraseña de lujo."
 
 message "Necesitarás una de éstas para crear tus cuentas de Heroku y de Github"
 
@@ -10,11 +10,11 @@ option "de otra forma" do
 
 important "Usa la misma dirección de correo para Heroku, Git, Github, y SSH."
 
-important "Enseguida **REEMPLAZA** `student@example.com` con tu **dirección de correo actual**."
+important "Enseguida **REEMPLAZA** `student@example.com` con tu **dirección de correo**."
 
 console "ssh-keygen -C student@example.com -t rsa"
 
-message "Presiona enter para aceptar la ubicación por defecto en que se guardará la llave"
+message "Presiona enter para aceptar la ubicación por defecto donde se guardará la llave"
 
 message "En el siguiente paso, te pedirá que ingreses un keyphrase."
 
@@ -28,7 +28,7 @@ blockquote do
   end
 end
 
-message "Después de que la generación de la llave se ha completado, verás una salida así."
+message "Cuando la generación de la llave haya finalizado, verás una salida así."
 
 result <<-OUTPUT
 Generating public/private rsa key pair.
