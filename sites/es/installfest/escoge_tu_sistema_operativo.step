@@ -1,10 +1,10 @@
 div do
 message <<-MARKDOWN
 
-## Click here if you are using a [Macintosh](macintosh)
+## Click aquí si estas usando un equipo [Macintosh](macintosh)
 
-## Click here if you are using a [PC running Windows](windows)
+## Click aquí si estas usando una [PC corriendo Windows](windows)
 
-## Click here if you are using a [PC running Linux](linux)
+## Click aquí si estas usando una [PC corriendo Linux](linux)
   MARKDOWN
 end
