@@ -125,17 +125,17 @@ class DocPage < Html5Page
     }
 
     footer {
-      p "RailsBridge Docs is maintained by RailsBridge volunteers."
+      p "#{ I18n.t 'footer.maintained_by' }"
       p do
-        text "If you find something that could be improved, please make a "
-        a "pull request ", href: "https://github.com/railsbridge/docs"
-        text "or "
-        a "drop us a note ", href: "https://github.com/railsbridge/docs/issues/new"
-        text "via GitHub Issues (no technical knowledge required)."
+        text "#{ I18n.t 'footer.find_something'}"
+        a "#{ I18n.t 'footer.pull_request' } ", href: "#{ I18n.t 'footer.pull_request_link' }"
+        text "#{ I18n.t 'footer.or' } "
+        a "#{ I18n.t 'footer.note' } ", href: "#{ I18n.t 'footer.issues_link' }"
+        text "#{ I18n.t 'footer.github_issues' }"
       end
       p do
-        text "Source: "
-        url "https://github.com/railsbridge/docs"
+        text "#{ I18n.t 'footer.source' } "
+        url "#{ I18n.t 'footer.source_link' }"
       end
     }
   end

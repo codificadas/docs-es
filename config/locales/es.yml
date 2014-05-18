@@ -26,3 +26,16 @@ es:
   expand_all: 'Expandir Todo'
   deploying: 'Lanzando'
   troubleshooting: 'Solución de problemas'
+  footer:
+    maintained_by: 'RailsBridge Docs es mantenido por voluntarios de RailsBridge'
+    find_something: 'Si encuentras algo que pueda ser mejorado, por favor envía un '
+    pull_request:  'pull request '
+    pull_request_link:  'https://github.com/codificadas/docs'
+    or: 'o '
+    note: 'envíanos una nota '
+    issues_link: 'https://github.com/codificadas/docs/issues/new'
+    github_issues: 'vía GitHub Issues (no se requieren conocimientos técnicos).'
+    source: 'Código fuente: '
+    source_link: 'https://github.com/codificadas/docs'
+
+
