@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 goals do
   goal "Escribir un programa de ruby en un archivo"
   goal "Ejecutar un programa de ruby guardado en un archivo"
