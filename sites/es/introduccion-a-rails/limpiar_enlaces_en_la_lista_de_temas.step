@@ -1,12 +1,12 @@
 goals {
 
-  message "Our app is nearly done! The main topics listing page is pretty busy. There are a lot of links that aren't necessary."
+message "Nuestra app está casi completa! La lista de temas principales esta muy saturada. Hay demasidos vínculo que son innecesarios."
 
-  message "Let's clean up the topics list page by doing the following:"
+  message "Vamos a limpiar los temas listados en la página de la siguiente manera:"
 
-  goal "Remove the 'show' link"
-  goal "Remove the 'edit' link"
-  goal "Change 'destroy' to 'delete'"
+  goal "Elimine el vínculo 'show'"
+  goal "Elimine el vínculo  'edit' "
+  goal "Cambie el 'destroy' por 'delete'"
 }
 
 steps {
