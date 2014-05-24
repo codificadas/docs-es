@@ -1,41 +1,41 @@
 goals {
 
-message "Nuestra app está casi completa! La lista de temas principales esta muy saturada. Hay demasidos vínculo que son innecesarios."
+message "¡Nuestra app está casi completa! La lista de temas principales está muy saturada. Hay demasiados vínculo que son innecesarios."
 
   message "Vamos a limpiar los temas listados en la página de la siguiente manera:"
 
-  goal "Elimine el vínculo 'show'"
-  goal "Elimine el vínculo  'edit' "
-  goal "Cambie el 'destroy' por 'delete'"
+  goal "Elimine el vínculo 'Mostrar'"
+  goal "Elimine el vínculo  'Editar' "
+  goal "Cambie el 'Destruir' por 'Eliminar'"
 }
 
 steps {
-  step "Remove the 'show' and 'edit' links" do
-    message "Open `app/views/topics/index.html.erb` and remove these two lines:"
+  step "Elimine los vínculos 'Mostrar' y 'Editar'" do
+    message "Abra `app/views/topics/index.html.erb` y elimine estas dos lineas:"
     source_code :erb, <<-HTML
-<td><%= link_to 'Show', topic %></td>
-<td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+<td><%= link_to 'Mostrar', topic %></td>
+<td><%= link_to 'Editar', edit_topic_path(topic) %></td>
     HTML
   end
 
-  step "Change 'destroy' to 'delete'" do
+  step "Cambie 'Destruir' por 'Eliminar'" do
 
-    message "Change the line with the word 'Destroy' to this:"
-    source_code :erb, "<td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>"
+    message "Modifique la línea con la palabra "Destruir" a lo siguiente:"
+    source_code :erb, "<td><%= link_to 'Eliminar', topic, method: :delete, data: { confirm: '¿Está seguro?' } %></td>"
   end
 
-  step "Confirm your changes" do
+  step "Confirme los cambios" do
 
-    message "Now save your file and try reloading in your browser to see the changes."
+    message "Ahora, guarde el archivo e intente volver a cargar su navegador para ver los cambios."
   end
 }
 
 
 explanation {
   message <<-MARKDOWN
-  * The two links we removed were show and edit.  We did this because the title now links to the show page and from the show page you can reach the edit page.
+  * Los dos enlaces que quitamos eran ‘Mostrar’ y ‘Editar’. Hicimos esto porque el título ahora nos vincula a la página ‘Mostrar’ y desde la página ‘Mostrar’ se puede llegar a la página de ‘Editar’. 
 
-  * The second change we made was to make the link text 'Delete' instead of destroy.
+  * El segundo cambio que hicimos fue cambiar el texto del vínculo ‘Destruir’ por 'Eliminar'.
   MARKDOWN
 }
 
