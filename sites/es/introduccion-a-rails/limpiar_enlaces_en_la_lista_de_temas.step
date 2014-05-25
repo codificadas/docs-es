@@ -21,7 +21,7 @@ steps {
   step "Cambia 'Destruir' por 'Eliminar'" do
 
     message "Modifica la línea con la palabra 'Destruir' a lo siguiente:"
-    source_code :erb, "<td><%= link_to 'Eliminar', topic, method: :delete, data: { confirm: '¿Está seguro?' } %></td>"
+    source_code :erb, "<td><%= link_to 'Eliminar', topic, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>"
   end
 
   step "Confirma los cambios" do
