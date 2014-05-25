@@ -1,32 +1,32 @@
 goals {
 
-message "¡Nuestra app está casi completa! La lista de temas principales está muy saturada. Hay demasiados vínculo que son innecesarios."
+message "¡Nuestra aplicación está casi completa! La lista de temas principales está muy saturada. Hay demasiados vínculos que son innecesarios."
 
   message "Vamos a limpiar los temas listados en la página de la siguiente manera:"
 
-  goal "Elimine el vínculo 'Mostrar'"
-  goal "Elimine el vínculo  'Editar' "
-  goal "Cambie el 'Destruir' por 'Eliminar'"
+  goal "Eliminar el vínculo 'Mostrar'"
+  goal "Eliminar el vínculo  'Editar' "
+  goal "Cambiar el 'Destruir' por 'Eliminar'"
 }
 
 steps {
-  step "Elimine los vínculos 'Mostrar' y 'Editar'" do
-    message "Abra `app/views/topics/index.html.erb` y elimine estas dos lineas:"
+  step "Elimina los vínculos 'Mostrar' y 'Editar'" do
+    message "Abre `app/views/topics/index.html.erb` y elimina estas dos líneas:"
     source_code :erb, <<-HTML
 <td><%= link_to 'Mostrar', topic %></td>
 <td><%= link_to 'Editar', edit_topic_path(topic) %></td>
     HTML
   end
 
-  step "Cambie 'Destruir' por 'Eliminar'" do
+  step "Cambia 'Destruir' por 'Eliminar'" do
 
-    message "Modifique la línea con la palabra 'Destruir' a lo siguiente:"
+    message "Modifica la línea con la palabra 'Destruir' a lo siguiente:"
     source_code :erb, "<td><%= link_to 'Eliminar', topic, method: :delete, data: { confirm: '¿Está seguro?' } %></td>"
   end
 
-  step "Confirme los cambios" do
+  step "Confirma los cambios" do
 
-    message "Ahora, guarde el archivo e intente volver a cargar su navegador para ver los cambios."
+    message "Ahora, guarda el archivo e intenta volver a cargar tu navegador para ver los cambios."
   end
 }
 
@@ -35,7 +35,7 @@ explanation {
   message <<-MARKDOWN
   * Los dos enlaces que quitamos eran ‘Mostrar’ y ‘Editar’. Hicimos esto porque el título ahora nos vincula a la página ‘Mostrar’ y desde la página ‘Mostrar’ se puede llegar a la página de ‘Editar’. 
 
-  * El segundo cambio que hicimos fue cambiar el texto del vínculo ‘Destruir’ por 'Eliminar'.
+  * El segundo cambio que hicimos fue modificar el texto del vínculo ‘Destruir’ por 'Eliminar'.
   MARKDOWN
 }
 
