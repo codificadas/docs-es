@@ -1,31 +1,31 @@
 goals {
 
   message <<-MARKDOWN
-  When a user creates a new topic, or edits an existing topic, they are
-  currently shown a page with just that topic. For our voting app it makes
-  more sense that they would be taken back to the topic list."
 
-  In this step we'll change the flow of our app so that the user is taken back to the topics list after they add a new topic (create) or
-  edit an existing topic (update).
+  Cuando un usuario crea un tema nuevo, o edita un tema existente, estos
+  son actualmente mostrados en una página con sólo ese tema. Para nuestra aplicación tendría más sentido que se nos regresara a la lista de temas.
+
+  En este paso cambiaremos el flujo de nuestra aplicación para que los usuarios sean regresados a la lista de temas después de que hayan añadido un nuevo tema (new) o editado un tema existence (update).
+
   MARKDOWN
 }
 
 steps {
 
-  step "Change the topics controller" do
+  step "Modificar el controlador de temas" do
 
-    message "Open `app/controllers/topics_controller.rb` and look at the create method. "
+    message "Abrir `app/controllers/topics_controller.rb` y observar el método create "
 
-    message "Find the line:"
+    message "Encuentra la línea:"
 
-    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully created.' }"
+    source_code :ruby, "format.html { redirect_to @topic, notice: 'El tema se ha creado correctamente.' }"
 
 
-    message 'and change `@topic` to `topics_path` like this:'
+    message 'y cambia `@topic` por `topics_path` así:'
 
-    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }"
+    source_code :ruby, "format.html { redirect_to topics_path, notice: 'El tema se ha creado correctamente.' }"
 
-    message 'so that the file looks like this:'
+    message 'para que el archivo luzca así:'
 
     source_code :ruby, <<-RUBY
 def create
@@ -33,7 +33,7 @@ def create
 
   respond_to do |format|
     if @topic.save
-      format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
+      format.html { redirect_to topics_path, notice: 'El tema se ha creado correctamente.' }
       format.json { render action: 'show', status: :created, location: @topic }
     else
       format.html { render action: 'new' }
@@ -43,22 +43,22 @@ def create
 end
     RUBY
 
-message "In the same file, locate the update method. "
+message "En el mismo archivo, encuentra el método update. "
 
-    message "Find the line:"
+    message "Encuentra la línea: "
 
-    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }"
+    source_code :ruby, "format.html { redirect_to @topic, notice: 'El tema se ha actualizado correctamente.' }"
 
 
-    message 'and change `@topic` to `topics_path` like before:'
+    message 'y cambia `@topic` por `topics_path` así:'
 
-    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }"
+    source_code :ruby, "format.html { redirect_to topics_path, notice: 'El tema se ha actualizado correctamente.' }"
   end
 
-  step "Add the flash message to your application view" do
-      message "Open `app/views/layouts/application.html.erb`."
+  step "Añade el mensaje flash a la vista de tu aplicación" do
+      message "Abre `app/views/layouts/application.html.erb`."
 
-      message "Find the `<body>` HTML tag and immediately after add the following code:"
+      message "Encuentra la etiqueta de HTML `<body>` e inmediatamente agrega el siguiente código:"
 
       source_code :ruby, <<-RUBY
 <% flash.each do |name, msg| %>
@@ -67,8 +67,8 @@ message "In the same file, locate the update method. "
       RUBY
   end
 
-  step "Confirm your changes" do
-    message "Look at <http://localhost:3000>."
+  step "Confirma los cambios" do
+    message "Ve a <http://localhost:3000>."
   end
 }
 
@@ -76,11 +76,11 @@ message "In the same file, locate the update method. "
 explanation {
 
   message <<-MARKDOWN
-  * `format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }`:
-    * `format.html` means that the server should send html back to the browser
-    * `redirect_to topics_path` means show the **topics list page** when we're done creating or updating a topic
-    * `notice: 'Topic was successfully created/updated.'` puts the message into the flash so it will be displayed on the topics list
+  * `format.html { redirect_to topics_path, notice: 'El tema se ha creado correctamente.' }`:
+    * `format.html` significa que el servidor debería regresar html al navegador
+    * `redirect_to topics_path` quiere decir: muestra la **página de la lista de temas** cuando hayamos terminado de crear o actualizar un tema
+    * `notice: 'El tema se ha creado/actualizado correctamente'` imprime el mensaje dentro de la notificación flash para que sea mostrado en la lista de temas
   MARKDOWN
 }
 
-next_step "make_the_topic_title_a_link"
+next_step "hacer_el_titulo_del_tema_un_enlace"
