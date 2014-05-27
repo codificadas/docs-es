@@ -5,7 +5,7 @@ goals {
   Cuando un usuario crea un tema nuevo, o edita un tema existente, estos
   son actualmente mostrados en una página con sólo ese tema. Para nuestra aplicación tendría más sentido que se nos regresara a la lista de temas.
 
-  En este paso cambiaremos el flujo de nuestra aplicación para que los usuarios sean regresados a la lista de temas después de que hayan añadido un nuevo tema (new) o editado un tema existence (update).
+  En este paso cambiaremos el flujo de nuestra aplicación para que los usuarios sean regresados a la lista de temas después de que hayan añadido un nuevo tema (new) o editado un tema existente (update).
 
   MARKDOWN
 }
