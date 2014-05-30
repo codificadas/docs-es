@@ -1,22 +1,22 @@
 message <<MARKDOWN
-Guess what?  _**You're done!!!**_ Congratulations, you just \"finished\" your first rails app!
+¿Adivina qué? _**¡Ya acabaste!**_ Felicidades, ¡acabas de terminar tu primera aplicación Rails!
 
-(They're never _really_ ever finished... have fun tweaking it!)
+(Realmente nunca están completamente terminadas... ¡diviértete retocándola!)
 
-# Extra Credit
+# Actividad Extra
 
-If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try:
+Si ya recorriste todo el camino a través del Suggestotron y te sobra tiempo, aquí hay algunas cosas que puedes intentar:
 
-* Add a downvote button that does the opposite of what the upvote button does
-* Sort topics by their number of votes
-* Add an 'about' page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don't get stranded.
-* If your class has a **lot** of time left over:
-  * Users should be allowed to vote only once: give votes a user_id and allow a user to have voted on each topic only once. But wait, what is a 'user' in our system? Get a volunteer to introduce everyone to [Devise](https://github.com/plataformatec/devise), a simple way to add authentication to a Rails application.
-  * Users should be able to give a post a 'negative' vote instead of a positive one. How might you represent that in this system?
+* Agrega un botón de voto negativo que haga lo contrario a lo que hace el botón de voto positivo.
+* Ordena los temas por numero de votos
+* Agrega una página 'Acerca de', vinculada desde la parte inferior de la lista de temas del Suggestotron. En la página 'Acerca de' haz posible que se pueda regresar a la lista de temas, así los usuarios no se quedarán atorados.
+* Si tu grupo tiene **mucho** tiempo de sobra:
+  * Los usuarios solo deberán tener permitido votar una sola vez: a cada voto asigna un user_id y permite al usuario que pueda votar una sola vez en cada tema. Pero espera, ¿qué es un 'usuario' en nuestro sistema? Pide a un instructor que dé a todos una introducción a [Devise](https://github.com/plataformatec/devise), una manera simple de agregar autenticación a una aplicación Rails.
+  * Los usuarios deben ser capaces de dar un voto 'negativo' en vez de uno positivo. ¿Cómo podrías representar eso en este sistema?
 
 MARKDOWN
 
-h1 "Authors"
+h1 "Autores"
 
 ul do
   li "Sarah Allen"
@@ -24,16 +24,16 @@ ul do
   li "Alex Chaffee"
   li "Ryan Davis"
   li "Steven! Ragnarok"
-  li "...and many, many others"
+  li "...y muchos, muchos otros"
 end
 
-h1 "What next?"
+h1 "¿Qué sigue?"
 
 ul do
-  li "Probably time for the closing presentation."
-  li "After that, start a project, tutorial, and come back again!"
+  li "Probablemente tiempo para la presentación de cierre."
+  li "Después de eso, empieza un proyecto, tutorial, ¡y regresa nuevamente!"
   li do
-    span "All our favorite resources can be found on the RailsBridge site: "
+    span "Todos nuestros recursos favoritos se encuentran en el sitio de RailsBridge: "
     a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
   end
 end
