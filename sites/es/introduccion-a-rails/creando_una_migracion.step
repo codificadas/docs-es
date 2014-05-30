@@ -42,4 +42,4 @@ explanation {
   tip"Puedes ejecutar `rake -T` para ver la lista de todos los comandos `rake` a los que actualmente tu aplicación responde, junto con una descripción corta de cada tarea."
 }
 
-next_step "CRUD_con_scaffolding"
+next_step "crud_con_scaffolding"
