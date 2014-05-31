@@ -1,32 +1,32 @@
 goals {
-  message "Your friends recommended two changes for the site:"
-  goal "Don't show the description on the list page"
-  goal "Make the title a link and when it's clicked show the description"
+  message "Tus amigos recomendaron dos cambios parale sitio:"
+  goal "No mostrar la descripción en la página de lista"
+  goal "Haz el título un enlace y que, cuando sea seleccionado, muestre la descripción"
 }
 
 steps {
 
 
-  step("Remove the description") {
+  step("Quitar la descripción") {
 
-    message "Let's start by removing the description. Open `app/views/topics/index.html.erb` and delete the line that looks like this:"
+    message "Empecemos quitando la descripción. Abre `app/views/topics/index.html.erb` y borra la línea que se ve como esta:"
 
     source_code :erb, "<td><%= topic.description %></td>"
 
-    message "Also delete the line that looks like this:"
+    message "También borra la línea que luce así:"
   source_code :erb, "<th>Description</th>"
 
-    message "If you save and try to load it in the browser you should see that the description no longer appears."
+    message "Si guardas e intentas recargar el navegador, deberías ver que la descripción ya no aparece."
 
   }
 
-  step("Make the title a link") {
+  step("Haz el título un enlace") {
 
-    message "Now make the title a link by editing `app/views/topics/index.html.erb` (again) and replacing this line:"
+    message "Ahora haz el título un enlace editando `app/views/topics/index.html.erb` (de nuevo) y reemplaza la siguiente línea:"
 
     source_code :erb, "<td><%= topic.title %></td>"
 
-    message "with this:"
+    message "con esto:"
 
     source_code :erb, "<td><%= link_to topic.title, topic %></td>"
   }
@@ -36,24 +36,21 @@ explanation {
 
   source_code :erb, "<td><%= topic.description %></td>"
 
-  message "This line was getting the description using .description and just printing it out."
+  message "Esta línea obtenía la descripción usando .description y únicamente lo imprimía."
 
   source_code :erb, "<th>Description</th>"
 
   message "
-  `<th>` stands for table header and everything between `<th>` and
-  `</th>` was being printed as a table header (bold). We removed it
-  since we removed the description and it would look funny to have the
-  header and the wrong thing below it."
+  `<th>` significa encabezado de tabla y todo lo que está entre `<th>` y
+  `</th>` se imprimía como un encabezado de tabla (negritas). Lo quitamos porque quitamos la descripción y se vería chistoso tener un encabezado con el contenido equivocado abajo."
 
   hr
 
   source_code :erb, "<td><%= link_to topic.title, topic %></td>"
 
   message "
-  Here's another use of `link_to` to create a link on the page. This
-  `link_to` creates a link using the text from the topic title and goes
-  to the topic#show page."
+  Aquí hay otro uso de `link_to` para crear un enlace en la página. Este
+  `link_to` crea un enlace usando el texto del título del tema y apunta hacia topic#show page."
 }
 
-next_step "clean_up_links_on_the_topics_list"
+next_step "limpiar_enlaces_en_la_lista_de_temas"
