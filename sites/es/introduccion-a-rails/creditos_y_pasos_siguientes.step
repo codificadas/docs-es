@@ -8,10 +8,10 @@ message <<MARKDOWN
 Si ya recorriste todo el camino a través del Suggestotron y te sobra tiempo, aquí hay algunas cosas que puedes intentar:
 
 * Agrega un botón de voto negativo que haga lo contrario a lo que hace el botón de voto positivo.
-* Ordena los temas por numero de votos
+* Ordena los temas por número de votos
 * Agrega una página 'Acerca de', vinculada desde la parte inferior de la lista de temas del Suggestotron. En la página 'Acerca de' haz posible que se pueda regresar a la lista de temas, así los usuarios no se quedarán atorados.
 * Si tu grupo tiene **mucho** tiempo de sobra:
-  * Los usuarios solo deberán tener permitido votar una sola vez: a cada voto asigna un user_id y permite al usuario que pueda votar una sola vez en cada tema. Pero espera, ¿qué es un 'usuario' en nuestro sistema? Pide a un instructor que dé a todos una introducción a [Devise](https://github.com/plataformatec/devise), una manera simple de agregar autenticación a una aplicación Rails.
+  * Los usuarios sólo deberán tener permitido votar una sola vez: a cada voto asigna un user_id y permite al usuario que pueda votar una sola vez en cada tema. Pero espera, ¿qué es un 'usuario' en nuestro sistema? Pide a un instructor que dé a todos una introducción a [Devise](https://github.com/plataformatec/devise), una manera simple de agregar autenticación a una aplicación Rails.
   * Los usuarios deben ser capaces de dar un voto 'negativo' en vez de uno positivo. ¿Cómo podrías representar eso en este sistema?
 
 MARKDOWN
