@@ -10,7 +10,7 @@ message "¡Nuestra aplicación está casi completa! La lista de temas principale
 }
 
 steps {
-  step "Eliminar los vínculos 'Mostrar' y 'Editar'" do
+  step "Elimina los vínculos 'Mostrar' y 'Editar'" do
     message "Abre `app/views/topics/index.html.erb` y elimina estas dos líneas:"
     source_code :erb, <<-HTML
 <td><%= link_to 'Mostrar', topic %></td>
@@ -18,13 +18,13 @@ steps {
     HTML
   end
 
-  step "Cambiar 'Destruir' por 'Eliminar'" do
+  step "Cambia 'Destruir' por 'Eliminar'" do
 
     message "Modifica la línea con la palabra 'Destruir' a lo siguiente:"
     source_code :erb, "<td><%= link_to 'Eliminar', topic, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>"
   end
 
-  step "Confirmar los cambios" do
+  step "Confirma los cambios" do
 
     message "Ahora, guarda el archivo e intenta volver a cargar tu navegador para ver los cambios."
   end
