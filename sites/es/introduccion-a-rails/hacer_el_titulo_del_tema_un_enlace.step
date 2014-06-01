@@ -1,5 +1,5 @@
 goals {
-  message "Tus amigos recomendaron dos cambios parale sitio:"
+  message "Tus amigos recomendaron dos cambios para el sitio:"
   goal "No mostrar la descripción en la página de lista"
   goal "Haz el título un enlace y que, cuando sea seleccionado, muestre la descripción"
 }
@@ -9,7 +9,7 @@ steps {
 
   step("Quitar la descripción") {
 
-    message "Empecemos quitando la descripción. Abre `app/views/topics/index.html.erb` y borra la línea que se ve como esta:"
+    message "Empecemos quitando la descripción. Abre `app/views/topics/index.html.erb` y borra la línea que se ve así:"
 
     source_code :erb, "<td><%= topic.description %></td>"
 
@@ -42,7 +42,7 @@ explanation {
 
   message "
   `<th>` significa encabezado de tabla y todo lo que está entre `<th>` y
-  `</th>` se imprimía como un encabezado de tabla (negritas). Lo quitamos porque quitamos la descripción y se vería chistoso tener un encabezado con el contenido equivocado abajo."
+  `</th>` se imprimía como un encabezado de tabla (negritas). Lo quitamos porque removimos la descripción y sería gracioso tener un encabezado con el contenido equivocado abajo."
 
   hr
 
