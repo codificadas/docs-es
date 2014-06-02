@@ -1,11 +1,11 @@
 goals {
-  message "Now we're going to add a button people can click to cast a vote."
+  message "Ahora vamos a añadir un botón para que la gente pueda dar votar un tema."
 }
 
 steps {
 
-  step "Add a new controller action for voting" do
-    message "Edit `app/controllers/topics_controller.rb` to add a method like this:"
+  step "Añadir una nueva acción de controlador para votar" do
+    message "Edita `app/controllers/topics_controller.rb` y añade un método como este:"
 
     source_code :ruby, <<-RUBY
       def upvote
@@ -15,20 +15,21 @@ steps {
       end
     RUBY
 
+
     message <<-MARKDOWN
-      * `@topic = Topic.find(params[:id])` finds the topic in the database with that id and stores it in the variable `@topic`.
-      * `@topic.votes.create` creates a new vote for the current topic and saves it in the database.
-      * `redirect_to(topics_path)` tells the browser to go back to topics_path (the topics list).
+      * `@topic = Topic.find(params[:id])` encuentra el tema en la base de datos que tiene ese id y lo almacena en la variable `@tema`.
+      * `@topic.votes.create` crea un nuevo voto para el tema actual y lo guarda en la base de datos.
+      * `redirect_to(topics_path)` le indica al navegador que regrese a la ruta `topics_path` (la lista de temas).
     MARKDOWN
   end
 
-  step "Add a new route for voting" do
-    message "Open `config/routes.rb` and find the section that looks like this:"
+  step "Añadir una nueva ruta para votar" do
+    message "Abre `config/routes.rb` y encuentra la sección que se ve algo así:"
     source_code :ruby, <<-RUBY
       resources :topics
     RUBY
 
-    message "Replace that line so it looks like this:"
+    message "Reemplaza esa línea para que se vea así:"
     source_code :ruby, <<-RUBY
       resources :topics do
         member do
@@ -37,8 +38,9 @@ steps {
       end
     RUBY
 
+
     message <<-MARKDOWN
-      Verify that route route was added successfully by checking the output of `rake routes` or [http://localhost:3000/rails/info](http://localhost:3000/rails/info). You should see a line that looks like this:
+      Verifica que la ruta ha sido añadida correctamente revisando la salida de `rake routes` o [http://localhost:3000/rails/info](http://localhost:3000/rails/info). Deberías poder ver una línea que dice algo así:
 
       ```
             Prefix Verb   URI Pattern                  Controller#Action
@@ -47,9 +49,9 @@ steps {
     MARKDOWN
   end
 
-  step "Add the button to the view" do
+  step "Añadir el botón para votar a la vista" do
 
-    message "Edit `app/views/topics/index.html.erb` so that the bottom loop looks like this:"
+    message "Edita `app/views/topics/index.html.erb` de tal forma que el ciclo que está al fondo se vea algo así:"
 
     source_code :erb, <<-HTML
       <% @topics.each do |topic| %>
@@ -66,17 +68,17 @@ steps {
     HTML
 
     message <<-MARKDOWN
-      * `pluralize(topic.votes.count, "vote")` displays the number of votes the topic has, plus the word 'vote' or 'votes' accordingly.
-      * `button_to '+1'` creates an html button with the text '+1'.
-      * `topic_upvote_path(topic)` creates the appropriate URL for the action we want to invoke. In this case, we want to upvote the current topic.
-        * `topic_upvote_path(topic)` would return `/topics/42/upvote` (if topic.id was 42)
-      * `method: :post` ensures we do the create action of CRUD, not the read action.
+      * `pluralize(topic.votes.count, "vote")` muestra el número de votos que tiene el tema `topic`, más la palabra 'vote' o 'votes', según sea necesario.
+      * `button_to '+1'` crea un botón html con el texto '+1'.
+      * `topic_upvote_path(topic)` crea la URL apropiada para la acción que queremos invocar. En este caso, queremos sumar un voto más al tema actual.
+        * `topic_upvote_path(topic)` regresará `/topics/42/upvote` (si `topic.id` es igual a 42)
+      * `method: :post` se asegura de que usamos la acción 'create' de CRUD, no la acción 'read'.
     MARKDOWN
   end
 
-  step "Confirm your changes in the browser" do
-    message "Go back to <http://localhost:3000/topics> and play."
-    message "Revel in the fact that you didn't have to restart the server to see these changes. Hawt, no?"
+  step "Confirma los cambios en el navegador" do
+    message "Regresa a <http://localhost:3000/topics> y revisa que todo este bien."
+    message "A propósito, no necesitas reiniciar el servidor para poder apreciar estos cambios. ¿Conveniente, no?"
   end
 }
 
