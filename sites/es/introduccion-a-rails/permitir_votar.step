@@ -5,7 +5,7 @@ goals {
 steps {
 
   step "Agregar una nueva acción al controlador para votar" do
-    message "Edita `app/controllers/topics_controller.rb` para agregar un método como este:"
+    message "Edita `app/controllers/topics_controller.rb` para agregar un método como éste:"
 
     source_code :ruby, <<-RUBY
       def upvote
@@ -23,12 +23,12 @@ steps {
   end
 
   step "Agrega una nueva ruta para votar" do
-    message "Abre `config/routes.rb` y encuentre la sección que se ve como esta:"
+    message "Abre `config/routes.rb` y encuentra la sección que se ve como esta:"
     source_code :ruby, <<-RUBY
       resources :topics
     RUBY
 
-    message "Reemplaza esa línea para que quede como esta:"
+    message "Reemplaza esa línea para que quede como ésta:"
     source_code :ruby, <<-RUBY
       resources :topics do
         member do
@@ -38,7 +38,7 @@ steps {
     RUBY
 
     message <<-MARKDOWN
-      Verifica que la ruta fue agregada exitosamente revisando en la salida de `rake routes` o [http://localhost:3000/rails/info](http://localhost:3000/rails/info). Deberías ver una línea como esta:
+      Verifica que la ruta fue agregada exitosamente revisando en la salida de `rake routes` o [http://localhost:3000/rails/info](http://localhost:3000/rails/info). Deberías ver una línea como ésta:
 
       ```
             Prefix Verb   URI Pattern                  Controller#Action
@@ -66,7 +66,7 @@ steps {
     HTML
 
     message <<-MARKDOWN
-      * `pluralize(topic.votes.count, "vote")` muestra el número de votos que tiene el tema, mas la palabra displays the number of votes the topic has, plus the word 'vote' o 'votes' correspondiente.
+      * `pluralize(topic.votes.count, "vote")` muestra el número de votos que tiene el tema, mas la palabra 'vote' o 'votes' correspondiente.
       * `button_to '+1'` crea un botón html con el texto '+1'.
       * `topic_upvote_path(topic)` crea la URL apropiada para la acción que queremos invocar. En este caso, queremos aumentar la cantidad de votos del tema actual.
         * `topic_upvote_path(topic)` regresaría `/topics/42/upvote` (si topic.id fuera 42)
@@ -76,7 +76,7 @@ steps {
 
   step "Confirmar los cambios en el navegador" do
     message "Regresa a <http://localhost:3000/topics> y juega."
-    message "Deléitate con el hecho de que no tuviste que reiniciar el servidor para ver los cambios. ¿La estás pasando bien, no?"
+    message "Deléitate con el hecho de que no tuviste que reiniciar el servidor para ver los cambios. Conveniente, ¿no?"
   end
 }
 
