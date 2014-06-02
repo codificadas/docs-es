@@ -2,14 +2,14 @@
 goals {
 
   message <<-MARKDOWN
-    At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
+    En esencia, la mayoría de los sitios web que tiene una base de datos son iguales. Necesitan almacenar registros y proveer una manera de hacer lo siguiente:
 
-    * **C**reate new records in the database
-    * **R**ead or show the records in the database
-    * **U**pdate existing records
-    * **D**estroy or delete records
+    * Crear nuevos registros en la base de datos (**C**reate)
+    * Leer o mostrar los registros de la base de datos (**R**ead)
+    * Actualizar los registros existentes (**U**pdate)
+    * Destruir o eliminar registros (**D**estroy)
 
-    Because these 4 actions (CRUD) are so common, rails includes the scaffold command to make creating them easier.
+    Ya que estas 4 acciones (CRUD) son muy comunes, Rails incluye el comando scaffold para ejecutar estas acciones de manera fácil.
   MARKDOWN
 }
 
@@ -20,31 +20,31 @@ steps {
   }
 
   step {
-    message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
-    message "You should see a page listing topics that looks something like this:"
+    message "Dirige tu navegador a [http://localhost:3000/topics](http://localhost:3000/topics)"
+    message "Deberías ver una página con una lista de temas de esta manera:"
 
-    img src: "img/Seattle_topic_list_page.png", alt: "Topic List Page"
+    img src: "img/Seattle_topic_list_page.png", alt: "Página de Lista de Temas"
   }
 
   step {
     message <<-MARKDOWN
-  * Click on "New Topic"
-  * Fill in the form and click "Create Topic"
-  * You should see a confirmation page like this:
+  * Clic en "Nuevo Tema"
+  * Llena el formulario y haz clic en "Crear Tema"
+  * Deberías ver una página de confirmación así: 
     MARKDOWN
 
-    img alt: "topic created", src: "img/Seattle_topic_created.png"
+    img alt: "tema creado", src: "img/Seattle_topic_created.png"
   }
 
   step {
     message <<-MARKDOWN
-      * Click on "back"
-      * You should see the topic list again, this time with your new topic listed:
+      * Clic en "regresar"
+      * Deberías ver la lista de temas otra vez, pero ahora con los nuevos temas enlistados:
 
-      ![list with topic](img/Seattle_list_with_topic.png)
+      ![lista con tema](img/Seattle_list_with_topic.png)
 
-      * Try the 'show', 'edit', and 'destroy' links to see what they do
-      * You've created a basic database driven web site, congrats!
+      * Haz clic en 'mostrar (show)', 'edit (editar)' y 'eliminar (destroy)' para ver qué es lo que hacen
+      * Haz creado un sitio web básico con base de datos, ¡felicidades!
     MARKDOWN
   }
 }
@@ -52,56 +52,56 @@ steps {
 explanation {
 
   message <<-MARKDOWN
-  How did all those pages get created and hooked together? The rails scaffold did it for you.
+  ¿Como se crearon y enlazaron esas páginas? El scaffold de Rails lo hizo por ti.
 
-  Let's take a closer look at some of the files rails created:
+  Veamos mas a detalle algunos de los archivos que Rails ha creado:
 
   * `app/models/topic.rb`
-    * This file contains code for our topic model. If you look at it,
-      it's nearly blank. Creating, reading, updating, and deleting
-      records are built into rails.
+    * Este archivo contiene código para el modelo topic (tema). Si lo revisas,
+      está casi en blanco. Crear, leer, actualizar y eliminar registros
+      viene incorporado en Rails.
 
   * `app/views/topics`
-    * This folder contains all the views for our topics model. This is
-      where the code for the forms you used above is stored. Rails
-      created all of these pages as part of the scaffold.
-    * If you've written HTML before, many lines in the views should
-      look familiar. Rails views are HTML with some extra code added
-      to display data from the database.
+    * Esta carpeta contiene todas las vistas de nuestro modelo topic.
+      Aquí es donde se almacena el código de los formularios que utilizaste
+      anteriormente.
+      Rails creó todas estas páginas como parte del scaffold.
+    * Si has escrito HTML antes, debes reconocer muchas de las líneas en las
+      vistas. Las vistas de Rails son HTML con algo de código extra
+      agregado para mostrar información desde la base de datos.
 
   * `app/views/topics/index.html.erb`
-    * This is the code for the page that lists all the topics.
-    * Index is the name given to the "default" page for a web site or a
-      section of a web site. When you navigate to
-      http://localhost:3000/topics the topics index page is what is
-      sent to your computer.
+    * Este es el código de la página que enlista todos los temas.
+    * Index es el nombre asignado a la página "por defecto" en un sitio web
+      o sección de un sitio web. Cuando navegas hacia http://localhost:3000/topics
+      la página de índice de temas es lo que se envía a tu computadora.
 
   * `app/views/topics/show.html.erb`
-    * This is the page you get when you click the "show" link on the
-      "Listing topics" page.
+    * Esta es la página que obtienes cuando haces clic en el link
+      "mostrar (show)" en la página "Enlistando temas".
 
   * `app/views/topics/new.html.erb`
-    * This is the page you get when you click on "New Topic".
+    * Esta es la página que obtienes cuando haces clic en "Nuevo Tema".
 
   * `app/views/topics/edit.html.erb`
-    * This is the page you get when you click on "Edit"
+    * Esta es la página que obtienes cuando haces clic en "Editar".
 
   * `app/views/topics/_form.html.erb`
-    * You may have noticed that the page for new topics and the page
-      to edit topics looked similar. That's because they both use the
-      code from this file to show a form. This file is called a
-      partial since it only contains code for part of a page. Partials
-      always have filenames starting with an underscore character.
+    * Habrás notado que la página para nuevos temas y la página para editarlos
+      lucen similares. Es porque ambas utilizan el código de este
+      archivo para mostrar un formulario. A este archivo se le llama
+      parcial ya que solo contiene código para una parte de una
+      página. Los parciales siempre tienen nombres de archivos que inician
+      con un guión bajo.
 
-  * Challenge question: Can you find the line of code in new.html.erb
-    and edit.html.erb that makes the form partial appear?
+  * Desafío: ¿Puedes encontrar la línea de código en new.html.erb y
+    edit.html.erb que hace que el formulario aparezca?
 
   * `app/controllers/topics_controller.rb`
-    * This is the controller file that rails created as part of the scaffold
-    * If you look you'll see a method (a line beginning with
-      <code>def</code>) for each of the views listed above (except
-      _form.html.erb)
+    * Este es el archivo de controlador que Rails creó como parte del scaffold
+    * Si revisas verás un método (una línea que inicia con <code>def</code>)
+      para cada vista enlistada anteriormente (excepto _form.html.erb)
     MARKDOWN
 }
 
-next_step "setting_the_default_page"
+next_step "ajustando_pagina_por_defecto"
