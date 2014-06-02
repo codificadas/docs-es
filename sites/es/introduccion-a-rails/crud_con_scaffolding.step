@@ -2,7 +2,7 @@
 goals {
 
   message <<-MARKDOWN
-    En escencia, la mayoría de los sitios web que tiene una base de datos son iguales. Necesitan almacenar registros y proveer una manera de hacer lo siguiente:
+    En esencia, la mayoría de los sitios web que tiene una base de datos son iguales. Necesitan almacenar registros y proveer una manera de hacer lo siguiente:
 
     * Crear nuevos registros en la base de datos (**C**reate)
     * Leer o mostrar los registros de la base de datos (**R**ead)
