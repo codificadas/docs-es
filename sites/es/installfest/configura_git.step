@@ -25,3 +25,5 @@ git config --global color.branch auto
     message "Si estas utilizando Windows, la salida de Git no tendrá colores."
   end
 end
+
+next_step "crea_una_llave_ssh"

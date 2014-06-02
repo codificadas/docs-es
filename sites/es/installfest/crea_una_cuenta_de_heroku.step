@@ -33,4 +33,4 @@ step "Agrega tu llave SSH a tu cuenta de Heroku" do
   message "Presiona enter para aceptar el archivo de la llave por defecto"
 end
 
-next_step "crea_y_lanza_una_rails_app"
+next_step "crea_y_lanza_una_aplicacion_rails"
