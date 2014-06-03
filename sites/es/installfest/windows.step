@@ -117,4 +117,4 @@ step "Instala un Editor de Textos" do
   message "Descarga Sublime Text 2 aquí: <http://www.sublimetext.com/2>"
 end
 
-next_step "configurar_git"
+next_step "configura_git"

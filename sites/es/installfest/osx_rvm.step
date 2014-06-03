@@ -34,7 +34,7 @@ end
 
 a name: "install-rvm"
 step "Instala RVM, el organizador de versiones de Ruby ", {:anchor_name => 'instala_rvm'} do
-  link "instala_rvm"
+  insert "instala_rvm"
 end
 
 step "Configura RVM para usar Homebrew" do
