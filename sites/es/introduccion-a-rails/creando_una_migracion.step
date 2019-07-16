@@ -17,7 +17,7 @@ steps {
     console "rails generate scaffold topic titulo:string descripcion:text"
     message <<-MARKDOWN
 * `generate scaffold` le dice a Rails que realice todo lo necesario para ponerse en marcha con temas.
-* `tema` le dice a Rails el nombre del nuevo modelo.
+* `topic` le dice a Rails el nombre del nuevo modelo.
 * `titulo:string` dice que los temas tienen un título, el cual es una cadena.
 * `descripcion:text` dice que los temas tienen una descripción, que es de tipo texto. (Nosotros también estamos confundidos con la diferencia entre estos dos tipos.)
     MARKDOWN
