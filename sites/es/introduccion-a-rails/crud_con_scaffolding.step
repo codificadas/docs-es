@@ -20,7 +20,7 @@ steps {
   }
 
   step {
-    message "Dirige tu navegador a [http://localhost:3000/topics](http://localhost:3000/topics)"
+    message "Dirige tu navegador a [http://localhost:3000/temas](http://localhost:3000/temas)"
     message "Deberías ver una página con una lista de temas de esta manera:"
 
     img src: "img/Seattle_topic_list_page.png", alt: "Página de Lista de Temas"
