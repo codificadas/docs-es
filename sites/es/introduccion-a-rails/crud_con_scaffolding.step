@@ -20,7 +20,7 @@ steps {
   }
 
   step {
-    message "Dirige tu navegador a [http://localhost:3000/topics](http://localhost:3000/topics)"
+    message "Dirige tu navegador a [http://localhost:3000/temas](http://localhost:3000/temas)"
     message "Deberías ver una página con una lista de temas de esta manera:"
 
     img src: "img/Seattle_topic_list_page.png", alt: "Página de Lista de Temas"
@@ -56,13 +56,13 @@ explanation {
 
   Veamos mas a detalle algunos de los archivos que Rails ha creado:
 
-  * `app/models/topic.rb`
-    * Este archivo contiene código para el modelo topic (tema). Si lo revisas,
+  * `app/models/tema.rb`
+    * Este archivo contiene código para el modelo tema. Si lo revisas,
       está casi en blanco. Crear, leer, actualizar y eliminar registros
       viene incorporado en Rails.
 
-  * `app/views/topics`
-    * Esta carpeta contiene todas las vistas de nuestro modelo topic.
+  * `app/views/temas`
+    * Esta carpeta contiene todas las vistas de nuestro modelo tema.
       Aquí es donde se almacena el código de los formularios que utilizaste
       anteriormente.
       Rails creó todas estas páginas como parte del scaffold.
@@ -70,23 +70,23 @@ explanation {
       vistas. Las vistas de Rails son HTML con algo de código extra
       agregado para mostrar información desde la base de datos.
 
-  * `app/views/topics/index.html.erb`
+  * `app/views/temas/index.html.erb`
     * Este es el código de la página que enlista todos los temas.
     * Index es el nombre asignado a la página "por defecto" en un sitio web
-      o sección de un sitio web. Cuando navegas hacia http://localhost:3000/topics
+      o sección de un sitio web. Cuando navegas hacia http://localhost:3000/temas
       la página de índice de temas es lo que se envía a tu computadora.
 
-  * `app/views/topics/show.html.erb`
+  * `app/views/temas/show.html.erb`
     * Esta es la página que obtienes cuando haces clic en el link
       "mostrar (show)" en la página "Enlistando temas".
 
-  * `app/views/topics/new.html.erb`
+  * `app/views/temas/new.html.erb`
     * Esta es la página que obtienes cuando haces clic en "Nuevo Tema".
 
-  * `app/views/topics/edit.html.erb`
+  * `app/views/temas/edit.html.erb`
     * Esta es la página que obtienes cuando haces clic en "Editar".
 
-  * `app/views/topics/_form.html.erb`
+  * `app/views/temas/_form.html.erb`
     * Habrás notado que la página para nuevos temas y la página para editarlos
       lucen similares. Es porque ambas utilizan el código de este
       archivo para mostrar un formulario. A este archivo se le llama
@@ -97,7 +97,7 @@ explanation {
   * Desafío: ¿Puedes encontrar la línea de código en new.html.erb y
     edit.html.erb que hace que el formulario aparezca?
 
-  * `app/controllers/topics_controller.rb`
+  * `app/controllers/temas_controller.rb`
     * Este es el archivo de controlador que Rails creó como parte del scaffold
     * Si revisas verás un método (una línea que inicia con <code>def</code>)
       para cada vista enlistada anteriormente (excepto _form.html.erb)
