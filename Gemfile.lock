@@ -26,7 +26,7 @@ GEM
     files (0.3.1)
     git-duet (0.3.0)
     i18n (0.6.9)
-    json (1.8.1)
+    json (2.3.1)
     listen (1.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
