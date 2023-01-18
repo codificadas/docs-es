@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'activesupport', '~> 3.2.0'
+gem 'activesupport', '~> 4.0.13'
 gem 'coderay'
 gem 'deckrb', '~> 0.5.2'
 gem 'erector', '~> 0.9.0'
